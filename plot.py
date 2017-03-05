@@ -20,7 +20,12 @@ ax.plot([0, 400, 400, 0, 0], [0, 0, 400, 400, 0], "-", linestyle='dashed')
 ax.plot([100, 300, 300, 100, 100], [100, 100, 300, 300, 100], "-", linestyle='dashed')
 
 def cosine_law(a, b, c):
-  return math.acos((c**2 - b**2 - a**2)/(-2.0 * a * b))
+  val = (c**2 - b**2 - a**2) / (-2.0 * a * b)
+  if val > 1:
+    val = 1 
+  elif val < -1:
+    val = -1
+  return math.acos(val)
 
 
 def arctan(x, y, q2):
