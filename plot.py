@@ -52,7 +52,7 @@ def calculate_angles(x2, y2):
   return q1, q2
 
 
-def on_click(event):
+def on_move(event):
   x2 = event.xdata
   y2 = event.ydata
   q1, q2 = calculate_angles(x2, y2)
@@ -64,6 +64,6 @@ def on_click(event):
 
 
 fig = plt.gcf()
-cid_up = fig.canvas.mpl_connect('motion_notify_event', on_click)
+cid_up = fig.canvas.mpl_connect('motion_notify_event', on_move)
 
 input('Press enter to exit')
